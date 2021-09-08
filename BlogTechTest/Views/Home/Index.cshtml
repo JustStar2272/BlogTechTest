@@ -1,0 +1,31 @@
+﻿
+
+@{
+    ViewBag.Title = "Blog Website";
+    ViewBag.Keywords = "blog programming travel serials";
+    var base_path = Context.Request.PathBase;
+}
+<ul class="list-group">
+    <li class="list-group-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-category="Programing">Programing</a></li>
+    <li class="list-group-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-category="Serials">Serials</a></li>
+    <li class="list-group-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-category="Travel">Travel</a></li>
+</ul>
+<div class="text-center">
+    <h1 class="display-4">Topics</h1>
+
+
+</div>
+
+@foreach (var topic in Model)
+{
+    <div class="card" style="width: 18rem";>
+
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@topic.Title</h5>
+            <a asp-controller="Home" class="btn btn-primary" asp-action="Topic" asp-route-id="@topic.Id">Go to topic</a>
+            <a asp-controller="Home" class="btn btn-primary" asp-action="Edit" asp-route-id="@topic.Id">Edit</a>
+            <a asp-controller="Home" class="btn btn-primary" asp-action="Delete" asp-route-id="@topic.Id">Delete</a>
+        </div>
+    </div>
+}

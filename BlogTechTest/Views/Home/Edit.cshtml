@@ -1,0 +1,43 @@
+﻿@model Topic
+
+@{ 
+
+
+}
+
+<div>
+    <form asp-controller="Home" asp-action="Edit" method="post">
+        <input asp-for="Id" type="hidden" />
+      @*  <div>
+            <label>Title</label>
+            <input  />
+        </div>*@
+    <div>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Title</span>
+            <input type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="addon-wrapping" asp-for="Title">
+        </div>
+        @*  <label>Tags</label>
+            <input asp-for="Tags" />
+        </div>*@<br>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Title</span>
+            <input type="text" class="form-control" placeholder="Topic text" aria-label="Topic" aria-describedby="addon-wrapping" asp-for="Body">
+        </div>
+        <div>
+            <label>Category</label>
+            <select aria-label="Category" class="form-select" id="floatingSelect" aria-label="Floating label select example" asp-for="Category">
+                <option value="Programing">Programing</option>
+                <option value="Serials">Serials</option>
+                <option value="Travel">Travel</option>
+            </select>
+        </div><br>
+
+        @*  <div>
+            <label>Image</label>
+            <input asp-for="Image" />
+        </div>*@
+
+        <input class="btn btn-outline-primary" type="submit" value="Submit" />
+</form>
+</div>
